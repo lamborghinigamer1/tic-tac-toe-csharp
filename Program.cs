@@ -42,6 +42,33 @@ class Program
             player.AddPlayer(new Player(name, icon));
             playercount++;
         }
-        player.PlayGame();
+
+        bool firsttime = true;
+        while (true)
+        {
+            if (!firsttime)
+            {
+                Console.WriteLine("Play again? (y/n)");
+                string? input = Console.ReadLine();
+                if (input != null && input.ToLower() == "y")
+                {
+                    player.PlayGame();
+                }
+                else if (input != null && input.ToLower() == "n")
+                {
+                    Console.WriteLine("Goodbye!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                }
+            }
+            else
+            {
+                firsttime = false;
+                player.PlayGame();
+            }
+        }
     }
 }
