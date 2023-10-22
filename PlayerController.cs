@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace TicTacToe
 {
     public class PlayerController
@@ -19,7 +22,7 @@ namespace TicTacToe
         private void ShufflePlayers()
         {
             int n = players.Count;
-            Random random = new();
+            Random random = new Random();
 
             while (n > 1)
             {
@@ -51,7 +54,7 @@ namespace TicTacToe
                         Console.WriteLine("Select a number between 1 and 3 for the X");
                         while (true)
                         {
-                            string? inputx = Console.ReadLine();
+                            string inputx = Console.ReadLine();
                             if (inputx == null || inputx == "" || !int.TryParse(inputx, out x) || x < 1 || x > 3)
                             {
                                 Console.WriteLine("Invalid! Please select a number between 1 and 3 for the X");
@@ -64,7 +67,7 @@ namespace TicTacToe
                         Console.WriteLine("Select a number between 1 and 3 for the Y");
                         while (true)
                         {
-                            string? inputy = Console.ReadLine();
+                            string inputy = Console.ReadLine();
 
                             if (inputy == null || inputy == "" || !int.TryParse(inputy, out y) || y < 1 || y > 3)
                             {

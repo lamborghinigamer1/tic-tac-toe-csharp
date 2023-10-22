@@ -1,10 +1,12 @@
-﻿using TicTacToe;
+﻿using System;
+
+using TicTacToe;
 
 class Program
 {
     static void Main()
     {
-        PlayerController player = new(new DisplayGrid());
+        PlayerController player = new PlayerController(new DisplayGrid());
         int playercount = 0;
         while (playercount != 2)
         {
@@ -14,7 +16,7 @@ class Program
             while (true)
             {
                 Console.WriteLine("Player " + (playercount + 1) + " what's your name?");
-                string? input = Console.ReadLine();
+                string input = Console.ReadLine();
                 if (input == null || input == "")
                 {
                     Console.WriteLine("Invalid input");
@@ -27,7 +29,7 @@ class Program
             }
             while (true)
             {
-                string? input;
+                string input;
                 Console.WriteLine(name + " what will be your icon?");
                 input = Console.ReadLine();
                 if (char.TryParse(input, out icon))
@@ -49,7 +51,7 @@ class Program
             if (!firsttime)
             {
                 Console.WriteLine("Play again? (y/n)");
-                string? input = Console.ReadLine();
+                string input = Console.ReadLine();
                 if (input != null && input.ToLower() == "y")
                 {
                     player.PlayGame();
