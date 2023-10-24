@@ -28,7 +28,10 @@ namespace TicTacToe
             {
                 n--;
                 int k = random.Next(n + 1);
-                (players[n], players[k]) = (players[k], players[n]);
+
+                var temp = players[n];
+                players[n] = players[k];
+                players[k] = temp;
             }
         }
 
