@@ -14,11 +14,7 @@ namespace TicTacToe
         {
             Grid = new int[9];
             GridIcon = new char[9];
-            for (int i = 0; i < 9; i++)
-            {
-                Grid[i] = 0;
-                GridIcon[i] = ' ';
-            }
+            ResetBoard();
         }
         public void ResetBoard()
         {
