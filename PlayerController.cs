@@ -115,7 +115,7 @@ namespace TicTacToe
                 }
             }
             game.ShowGrid();
-            if (game.CheckDraw())
+            if (game.CheckDraw() && game.CheckForWinner() == 0)
             {
                 Console.WriteLine("Draw!");
             }
