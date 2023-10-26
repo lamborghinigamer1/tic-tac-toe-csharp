@@ -8,7 +8,7 @@ class Program
         int playercount = 0;
         while (playercount != 2)
         {
-            string name = "";
+            string name;
             char icon;
 
             while (true)
