@@ -33,14 +33,16 @@ namespace TicTacToe
         {
             ShufflePlayers();
 
-            while (game.CheckForWinner() == 0 || !game.CheckDraw())
+            char winnerIcon = ' ';
+            string winnerName = "";
+
+            while (winnerIcon == ' ' && !game.CheckDraw())
             {
                 game.ShowGrid();
                 int x;
                 int y;
                 int selectedOption;
 
-                int PlayerNumber = 1;
                 foreach (Player player in players)
                 {
                     game.ShowGrid();
@@ -78,46 +80,38 @@ namespace TicTacToe
 
                         selectedOption = (y - 1) * 3 + (x - 1);
 
-                        if (game.Grid[selectedOption] != 0)
+                        if (game.Grid[selectedOption] != ' ')
                         {
                             Console.WriteLine("Position already in use");
                         }
                         else
                         {
+                            game.Grid[selectedOption] = player.Icon;
                             break;
                         }
                     }
-                    game.Grid[selectedOption] = PlayerNumber;
-                    game.GridIcon[selectedOption] = player.Icon;
-                    if (game.CheckForWinner() != 0)
+                    if (game.CheckForWinner() != ' ')
                     {
+                        winnerIcon = game.CheckForWinner();
+                        winnerName += player.Name;
                         break;
                     }
                     if (game.CheckDraw())
                     {
                         break;
                     }
-                    PlayerNumber++;
                 }
-                if (game.CheckForWinner() != 0)
+                game.ShowGrid();
+                if (game.CheckDraw() && winnerName == "")
                 {
-                    break;
+                    Console.WriteLine("Draw");
                 }
-                if (game.CheckDraw())
+                else
                 {
-                    break;
+                    Console.WriteLine($"{winnerName} [{winnerIcon}] wins!");
                 }
             }
-            game.ShowGrid();
-            if (game.CheckDraw() && game.CheckForWinner() == 0)
-            {
-                Console.WriteLine("Draw!");
-            }
-            else
-            {
-                Console.WriteLine($"{players[game.CheckForWinner() - 1].Name} [{players[game.CheckForWinner() - 1].Icon}] wins!");
-            }
-            game.ResetBoard();
+                game.ResetBoard();
         }
     }
 }

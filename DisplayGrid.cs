@@ -29,7 +29,7 @@ namespace TicTacToe
                     }
                     else
                     {
-                        Console.Write($"[{GridIcon[toeindex]}]");
+                        Console.Write($"[{Grid[toeindex]}]");
                     }
                 }
                 Console.WriteLine();
