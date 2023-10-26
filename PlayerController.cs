@@ -117,7 +117,7 @@ namespace TicTacToe
                     Console.WriteLine($"{winnerName} [{winnerIcon}] wins!");
                 }
             }
-                game.ResetBoard();
+            game.ResetBoard();
         }
     }
 }
