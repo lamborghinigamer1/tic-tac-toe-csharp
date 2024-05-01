@@ -22,14 +22,14 @@ namespace TicTacToe
                 Console.Write(i + 1);
                 for (int j = 0; j < 3; j++)
                 {
-                    int toeindex = i * 3 + j;
-                    if (Grid[toeindex] == 0)
+                    int toeIndex = i * 3 + j;
+                    if (Grid[toeIndex] == 0)
                     {
                         Console.Write($"[ ]");
                     }
                     else
                     {
-                        Console.Write($"[{Grid[toeindex]}]");
+                        Console.Write($"[{Grid[toeIndex]}]");
                     }
                 }
                 Console.WriteLine();

@@ -53,8 +53,8 @@ namespace TicTacToe
                         Console.WriteLine("Select a number between 1 and 3 for the X");
                         while (true)
                         {
-                            string? inputx = Console.ReadLine();
-                            if (inputx == null || inputx == "" || !int.TryParse(inputx, out x) || x < 1 || x > 3)
+                            string? inputX = Console.ReadLine();
+                            if (inputX == null || inputX == "" || !int.TryParse(inputX, out x) || x < 1 || x > 3)
                             {
                                 Console.WriteLine("Invalid! Please select a number between 1 and 3 for the X");
                             }
@@ -66,9 +66,9 @@ namespace TicTacToe
                         Console.WriteLine("Select a number between 1 and 3 for the Y");
                         while (true)
                         {
-                            string? inputy = Console.ReadLine();
+                            string? inputY = Console.ReadLine();
 
-                            if (inputy == null || inputy == "" || !int.TryParse(inputy, out y) || y < 1 || y > 3)
+                            if (inputY == null || inputY == "" || !int.TryParse(inputY, out y) || y < 1 || y > 3)
                             {
                                 Console.WriteLine("Invalid! Please select a number between 1 and 3 for the X");
                             }
@@ -111,7 +111,7 @@ namespace TicTacToe
                     Console.WriteLine($"{winnerName} [{winnerIcon}] wins!");
                 }
             }
-                game.ResetBoard();
+            game.ResetBoard();
         }
     }
 }
