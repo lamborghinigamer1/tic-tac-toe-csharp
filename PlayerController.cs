@@ -70,7 +70,7 @@ namespace TicTacToe
 
                             if (inputY == null || inputY == "" || !int.TryParse(inputY, out y) || y < 1 || y > 3)
                             {
-                                Console.WriteLine("Invalid! Please select a number between 1 and 3 for the X");
+                                Console.WriteLine("Invalid! Please select a number between 1 and 3 for the Y");
                             }
                             else
                             {
